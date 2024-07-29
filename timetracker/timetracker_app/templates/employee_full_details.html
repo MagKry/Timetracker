@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block title %} Employee hours {% endblock %}
+{% block content %}
+
+{# <table border="1">#}
+{#        <tr>#}
+{#            <th>Id</th>#}
+{#            <th>Username</th>#}
+{#            <th>First name </th>#}
+{#            <th>Last name </th>#}
+{#            <th>Department </th>#}
+{##}
+{#        </tr>#}
+{##}
+{#                <tr>#}
+{#                    {% for employee in employees %}#}
+{#                    {% if employee.is_active %}#}
+{#                    <td >{{ employee.id }}</td>#}
+{#                    <td>{{ employee.username }}</td>#}
+{#                    <td>{{ employee.first_name }}</td>#}
+{#                    <td>{{ employee.last_name }}</td>#}
+{#                    <td>{{ employee.department }}</td>#}
+{#                </tr>#}
+{#                    {% endif %}#}
+{#                    {% endfor %}#}
+{#    </table>#}
+
+{% if employee %}
+
+    {% if employee.is_active %}
+<li> Id: {{ employee.id  }}<br>
+    Email: {{ employee.email }}<br>
+
+    Active: {{ employee.is_active}} <br>
+    Staff: {{ employee.is_staff }} <br>
+    Hours:
+    {% for entry in employee_entries %}
+        <li>{{ entry.date }} - {{ entry.department }} - {{ entry.sales_channel }} - {{ entry.hour }} hour(s) </li>
+
+    {% empty %}
+        No logged hours found.
+    {% endfor %}
+
+
+
+    {% endif %}
+
+{% else %}
+        There are no users matching your search criteria.
+{% endif %}
+
+
+
+
+{% endblock %}
+
+{% block footer %} {% endblock %}
