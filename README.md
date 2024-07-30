@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Timetracking-app
 The web application created with use of framework Django that enables logged in users, to log the time they spent on certain activities during their work day.
 
@@ -12,3 +13,6 @@ Hours added in the app can be filtered based on dates (all, current week, curren
 Bootstrap has been used for frontend.
 Models have been registered in django-admin.
 Database - postgresQL
+=======
+# Timetracker
+>>>>>>> 1043c06e43c07d7b34f7dc80bdcbaa6d13d91510
